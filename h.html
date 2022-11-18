@@ -1,0 +1,55 @@
+
+ejercicio1
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA-PROPERTY_ID"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments)};
+
+        gtag('js', new Date());
+        gtag('config', 'GA-PROPERTY_ID');
+        gtag('config', 'AW-GOOGLE_CONVERSION_ID');
+    </script>
+
+ejercicio2 
+
+<script>
+
+    gtag('event', 'view_item_list', 
+    {
+    items: [{
+        item_id: '25', item_name: 'woo-album', price: 15,
+        currency: 'EUR', quantity: 1
+    },
+    {
+
+        item_id: '17', item_name: 'woo-beanie', price: 18,
+        currency: 'EUR',
+        quantity: 1
+    }],
+
+        item_list_name: 'Related products', item_list_id: '0001'
+    }); 
+    
+</script>
+
+
+
+// 3.3.Practica
+<script>
+setTimeout(function(){ document.querySelectorAll(".button.product_type_simple.add_to_cart_button.aj ax_add_to_cart").forEach((element) => {
+element.addEventListener('click', () => {
+var productID = element.getAttribute("data-product_id");
+var productname = element.getAttribute("data-product_sku");
+gtag('event', 'add_to_cart', { variable1: 'test_123', currency: 'USD',
+items: [{
+item_id: productID,
+item_name: productname, }],
+value: 7.77 });
+});
+})
+}, 2000); </script>
+
+
+// 6.1.Practica
+<script>
+gtag('event', 'UA_test_event', {'send_to':'UA-218791373-2'}); </script>
